@@ -1,0 +1,28 @@
+.logo {
+  svg {
+    fill: black;
+    height: 100%;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  a {
+    margin-left: 2.5rem;
+    font-weight: 800;
+    font-size: 1rem;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 7rem;
+  padding: 2.5rem 4.15vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+}

@@ -1,0 +1,25 @@
+.section {
+  background: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8.125rem;
+  padding: 3.125rem;
+  width: 100%;
+}
+
+.logo {
+  height: 100%;
+
+  svg {
+    fill: white;
+    height: 100%;
+  }
+}
+
+.socialList {
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+}
