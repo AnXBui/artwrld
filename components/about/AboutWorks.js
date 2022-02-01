@@ -11,7 +11,8 @@ export default function AboutWorks() {
       </h1>
       <h2 className={styles.heading}>
         When used thoughtfully, we believe NFTs can help make art more widely
-        available, <b>put artists more comfortably in the driver's seat,</b> and
+        available,{" "}
+        <b>put artists more comfortably in the driver&apos;s seat,</b> and
         contribute to a more intentional art economy.
       </h2>
       <div className={styles.info}>
