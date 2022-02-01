@@ -19,10 +19,14 @@
   display: flex;
   justify-content: space-between;
   height: 7rem;
-  padding: 2.5rem 4.15vw;
+  padding: 2.5rem 1.5rem;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 20;
+
+  @media (min-width: 992px) {
+    padding: 2.5rem 4.15vw;
+  }
 }

@@ -9,9 +9,7 @@ export default function Home() {
   return (
     <div>
       <HomeSplash />
-
-      <Newsletter home={true} />
-
+      <Newsletter type="home" />
       <HomeLink />
       <Footer />
     </div>

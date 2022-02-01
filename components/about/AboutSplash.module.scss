@@ -1,0 +1,76 @@
+.section {
+  padding-top: 7rem;
+  padding-left: 1.5rem;
+  position: relative;
+
+  @media (min-width: 992px) {
+    padding-left: 4%;
+    padding-top: 9rem;
+    margin-bottom: 8.875rem;
+  }
+}
+
+.heading {
+  font-family: "UniversalSans";
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.15;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+
+  @media (min-width: 992px) {
+    font-size: 3.625rem;
+    padding-left: 8%;
+    max-width: 29ch;
+  }
+
+  a {
+    font-weight: 600;
+  }
+
+  i {
+    font-family: "BradfordLL-Light";
+    font-weight: 300;
+    font-style: italic;
+  }
+}
+
+.paragraphs {
+  p {
+    font-family: "UniversalSans";
+    font-weight: 500;
+    font-size: 0.9375rem;
+    line-height: 1.4;
+    letter-spacing: -1%;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+
+    @media (min-width: 992px) {
+      font-size: 1.125rem;
+      margin-left: 52%;
+      margin-right: 16%;
+    }
+  }
+}
+
+.button {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 100%;
+  position: absolute;
+  bottom: 2rem;
+  display: none;
+
+  @media (min-width: 992px) {
+    margin-left: 8%;
+    display: block;
+  }
+
+  svg {
+    fill: none;
+    stroke: black;
+    height: 40%;
+    stroke-width: 3px;
+  }
+}
