@@ -1,21 +1,21 @@
 import Logo from "../../assets/svg/Logo";
 import Arrow from "../../assets/svg/Arrow";
 import LinkTo from "../LinkTo";
-import styles from "./AboutSplash.module.scss";
+import styles from "./AboutWorks.module.scss";
 
 export default function AboutWorks() {
   return (
     <section className={styles.section}>
-      <h1>
-        How it <span>Works</span>
+      <h1 className={`h1`}>
+        How it <i>Works</i>
       </h1>
-      <h2>
+      <h2 className={styles.heading}>
         When used thoughtfully, we believe NFTs can help make art more widely
         available, <b>put artists more comfortably in the driver's seat,</b> and
         contribute to a more intentional art economy.
       </h2>
-      <div>
-        <p>
+      <div className={styles.info}>
+        <p className={`largeParagraph`}>
           Every artwork presented by Artwrld is backed by an NFT (non-fungible
           token), a piece of code that establishes the work as a unique object
           created and owned by certain individuals, like a certificate of
@@ -24,8 +24,11 @@ export default function AboutWorks() {
           blockchain (Artwrld uses the Ethereum blockchain for most of our
           projects).
         </p>
+
+        <LinkTo className={styles.link} href="/artists">
+          Meet the Artists
+        </LinkTo>
       </div>
-      <LinkTo href="/artists">Meet the Artists</LinkTo>
     </section>
   );
 }

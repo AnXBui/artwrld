@@ -13,7 +13,7 @@ export default function AboutSplash() {
         We are an <LinkTo href="/artists">artist-driven</LinkTo> organization
         that believes in building an <i>art world</i> worth inhabiting.
       </h2>
-      <div className={styles.paragraphs}>
+      <div className={`largeParagraph ${styles.paragraphs}`}>
         <p>
           We work collaboratively with artists to design and build projects that
           engage audiences and explore the emerging possibilities of blockchain

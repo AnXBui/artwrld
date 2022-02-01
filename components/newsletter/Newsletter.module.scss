@@ -104,7 +104,6 @@
 }
 
 .emblem {
-  border: 1px solid black;
   border-radius: 100%;
   display: flex;
   flex-direction: column;
@@ -113,6 +112,7 @@
   width: 9.75rem;
   height: 9.75rem;
   margin: 0 auto 4.5rem;
+  position: relative;
 
   @media (min-width: 992px) {
     width: 15.4375rem;
@@ -120,11 +120,76 @@
     grid-column: 2 / 3;
     grid-row: 1 / 3;
     margin: 0;
-
     justify-self: flex-end;
+  }
+
+  h3 {
+    font-family: "Office Code Pro";
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 15px;
+  }
+
+  p {
+    font-family: "Office Code Pro";
+    font-size: 15px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("/textCircle.png");
+    background-size: cover;
+    animation: rotateLoop 30s infinite linear;
+
+    @keyframes rotateLoop {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
   }
 }
 
 .footer {
   background: black;
+  display: block;
+  padding: 2.75rem 1.5rem;
+
+  @media (min-width: 992px) {
+    padding: 7.5rem 12%;
+  }
+
+  h2 {
+    color: white;
+    font-family: "BradfordLL-Light";
+    font-size: 1.875rem;
+    padding-right: 3rem;
+    margin-bottom: 2rem;
+
+    @media (min-width: 992px) {
+      font-size: 3.25rem;
+      max-width: 23ch;
+    }
+  }
+
+  input {
+    color: white;
+    background: none;
+    border-color: white;
+    &::placeholder {
+      color: white;
+    }
+  }
+
+  button {
+    color: white;
+    border-color: white;
+  }
 }

@@ -1,0 +1,84 @@
+.section {
+  padding: 0 1.5rem;
+
+  @media (min-width: 992px) {
+    padding: 0 4%;
+  }
+
+  h3 {
+    font-size: 1.375rem;
+    font-family: "UniversalSans";
+    font-weight: 300;
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto 1fr;
+    grid-gap: 1.5rem;
+    margin-bottom: 3.75rem;
+
+    @media (min-width: 992px) {
+      width: 28%;
+      margin-bottom: 5.375rem;
+    }
+
+    &:after {
+      content: "";
+      height: 1px;
+      background: black;
+      align-self: center;
+      width: 100%;
+    }
+  }
+}
+
+.list {
+  margin-bottom: 6.25rem;
+
+  @media (min-width: 992px) {
+    display: grid;
+    margin-left: 8%;
+    margin-right: 16%;
+    grid-template-columns: 1fr 1fr;
+    gap: 4.6875rem 12%;
+    height: fit-content;
+    margin-bottom: 12.125rem;
+  }
+}
+
+.item {
+  margin-bottom: 3.375rem;
+
+  @media (min-width: 992px) {
+    margin-bottom: 0;
+  }
+  h4 {
+    font-size: 1.625rem;
+    font-weight: 300;
+    margin-bottom: 0.2rem;
+
+    @media (min-width: 992px) {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  h5 {
+    font-size: 1.125rem;
+    font-family: "UniversalSans";
+    font-weight: 300;
+    margin-bottom: 1rem;
+
+    @media (min-width: 992px) {
+      font-size: 1.375rem;
+    }
+  }
+
+  p {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    letter-spacing: -1%;
+
+    @media (min-width: 992px) {
+      font-size: 0.875rem;
+    }
+  }
+}

@@ -4,7 +4,7 @@ export default function AboutInfo() {
   return (
     <section className={styles.section}>
       <h3>Supporting Nonprofits</h3>
-      <p>
+      <p className={`largeParagraph`}>
         Each project also benefits one or more nonprofit organizations, selected
         by the artist to receive a portion of every sale. Because NFTs have the
         potential to distribute funds automatically and in perpetuity whenever

@@ -18,7 +18,11 @@ export default function Newsletter({ type = "default" }) {
           <p>Spring 2022</p>
         </div>
       ) : null}
-      <h2>Subscribe to our newsletter for the latest updates</h2>
+      <h2>
+        {type == "default"
+          ? `Subscribe to our newsletter to receive the latest updates`
+          : `Subscribe to our newsletter for the latest updates`}
+      </h2>
       <form className={styles.form}>
         <input type="email" placeholder="Enter your email"></input>
         <button>Subscribe</button>

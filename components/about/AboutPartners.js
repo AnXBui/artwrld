@@ -43,9 +43,9 @@ export default function AboutPartners() {
   return (
     <section className={styles.section}>
       <h3>Team &amp; Partners</h3>
-      <ul>
-        {data.map(({ name, title, bio }) => (
-          <li>
+      <ul className={styles.list}>
+        {data.map(({ name, title, bio }, index) => (
+          <li className={styles.item} key={index}>
             <h4>{name}</h4>
             <h5>{title}</h5>
             <p>{bio}</p>
