@@ -13,7 +13,7 @@ export default function About() {
       <AboutInfo />
       <AboutWorks />
       <AboutPartners />
-      <Newsletter type="default" />
+      <Newsletter />
       <Footer />
     </div>
   );

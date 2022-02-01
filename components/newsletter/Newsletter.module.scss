@@ -19,6 +19,12 @@
 
 .form {
   display: flex;
+  flex-wrap: wrap;
+
+  @media (min-width: 500px) {
+    flex-wrap: nowrap;
+  }
+
   input {
     width: 30rem;
     height: 3.5rem;
@@ -52,12 +58,18 @@
     font-weight: 600;
     border-radius: 23px;
     padding: 16px;
-    margin-left: 1rem;
+    margin-top: 1rem;
+
+    @media (min-width: 500px) {
+      margin-top: 0;
+      margin-left: 1rem;
+    }
 
     @media (min-width: 992px) {
       padding: 28px;
       height: 4.5rem;
       margin-left: 1.25rem;
+      margin-top: 0;
     }
   }
 }

@@ -1,11 +1,13 @@
 import Newsletter from "../components/newsletter/Newsletter";
 import Footer from "../components/footer/Footer";
-export default function Artists() {
+import ArtistList from "../components/artist/artistList";
+const Artists = () => {
   return (
     <div>
-      <p>This is the artists page</p>
+      <ArtistList />
       <Newsletter />
       <Footer />
     </div>
   );
-}
+};
+export default Artists;
