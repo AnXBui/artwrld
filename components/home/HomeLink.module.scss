@@ -1,5 +1,9 @@
 .section {
-  padding: 3rem 12.5% 7.5rem;
+  padding: 2rem 1.5rem 4rem;
+
+  @media (min-width: 992px) {
+    padding: 3rem 12.5% 7.5rem;
+  }
 }
 
 .link {
@@ -10,9 +14,14 @@
   border-bottom: 1px solid black;
   margin-bottom: 1rem;
 
+  @media (min-width: 992px) {
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
   span {
     font-family: "Bradford LL";
-    font-size: 3.25rem;
+    font-size: clamp(2rem, 6vw, 3.25rem);
     text-align: center;
     line-height: 1.15;
     letter-spacing: -3%;

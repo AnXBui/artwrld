@@ -4,10 +4,11 @@ import AboutInfo from "../components/about/AboutInfo";
 import AboutWorks from "../components/about/AboutWorks";
 import AboutPartners from "../components/about/AboutPartners";
 import Footer from "../components/footer/Footer";
+import Layout from "../components/layout/Layout";
 
 export default function About() {
   return (
-    <div>
+    <Layout>
       <AboutSplash />
       <Newsletter type="about" />
       <AboutInfo />
@@ -15,6 +16,6 @@ export default function About() {
       <AboutPartners />
       <Newsletter />
       <Footer />
-    </div>
+    </Layout>
   );
 }

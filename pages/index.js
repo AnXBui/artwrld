@@ -5,13 +5,14 @@ import HomeSplash from "../components/home/HomeSplash";
 import Newsletter from "../components/newsletter/Newsletter";
 import HomeLink from "../components/home/HomeLink";
 import Footer from "../components/footer/Footer";
+import Layout from "../components/layout/Layout";
 export default function Home() {
   return (
-    <div>
+    <Layout>
       <HomeSplash />
       <Newsletter type="home" />
       <HomeLink />
       <Footer />
-    </div>
+    </Layout>
   );
 }
