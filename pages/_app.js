@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps, router }) {
   const url = router.route;
   return (
     <>
-      <Header />
+      <Header location={url} />
       <AnimatePresence
         exitBeforeEnter
         onExitComplete={() => {

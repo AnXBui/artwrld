@@ -1,9 +1,12 @@
 import Link from "next/link";
+import { motion } from "framer-motion";
 
-export default function LinkTo({ href, className, children }) {
+export default function LinkTo({ href, className, children, onClick }) {
   return (
-    <Link scroll={false} href={href}>
-      <a className={className}>{children}</a>
+    <Link scroll={false} passHref href={href}>
+      <motion.a onClick={onClick} className={className}>
+        {children}
+      </motion.a>
     </Link>
   );
 }
