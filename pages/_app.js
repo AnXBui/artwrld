@@ -2,6 +2,8 @@ import "../styles/globals.scss";
 import Header from "../components/Header";
 import { AnimatePresence } from "framer-motion";
 import Router from "next/router";
+import { useEffect } from "react";
+import React from "react";
 
 const routeChange = () => {
   // Temporary fix to avoid flash of unstyled content
@@ -23,6 +25,11 @@ function MyApp({ Component, pageProps, router }) {
 
   Router.events.on("routeChangeComplete", routeChange);
   Router.events.on("routeChangeStart", routeChange);
+
+  React.useEffect(() => {
+    router.push(router.asPath);
+  }, []);
+
   return (
     <>
       <Header location={url} />
@@ -34,7 +41,7 @@ function MyApp({ Component, pageProps, router }) {
         }}
         initial={false}
       >
-        <Component {...pageProps} key={url} />
+        <Component {...pageProps} key={router.asPath} />
       </AnimatePresence>
     </>
   );
