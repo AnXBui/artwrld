@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 
 export default function Layout({ children, className }) {
   const variants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 50, transition: { when: "beforeChildren" } },
     visible: { opacity: 1, y: 0, transition: { when: "beforeChildren" } },
-    exit: { opacity: 0, y: 50 },
+    exit: { opacity: 0, y: 50, transition: { when: "beforeChildren" } },
   };
   return (
     <motion.main
