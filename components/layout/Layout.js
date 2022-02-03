@@ -11,7 +11,7 @@ export default function Layout({ children, className }) {
       variants={variants}
       initial="hidden"
       animate="visible"
-      exit="exit"
+      // exit="exit"
       transition={{
         x: { type: "string", stiffness: 100 },
         default: { duration: 0.35 },
