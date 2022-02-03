@@ -1,9 +1,39 @@
-import LinkTo from "../LinkTo";
+// import LinkTo from "../LinkTo";
 import styles from "./Newsletter.module.scss";
+import { motion } from "framer-motion";
+import LineDivider from "../LineDivider";
 
 export default function Newsletter({ type = "default" }) {
+  const transition = {
+    type: "spring",
+    clamp: true,
+    friction: 60,
+    tension: 40,
+    mass: 0.25,
+  };
+
+  const titleVariants = {
+    hidden: { opacity: 0, y: "30%" },
+    visible: { opacity: 1, y: "0%" },
+  };
+
+  const containerVariants = {
+    hidden: { transition: { staggerChildren: 0 } },
+    visible: { transition: { staggerChildren: 0.15 } },
+  };
+
+  const emblemVariants = {
+    hidden: { scale: 0, y: "50%" },
+    visible: { scale: 1, y: 0 },
+  };
+
   return (
-    <section
+    <motion.section
+      animate="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.8 }}
+      variants={containerVariants}
+      exit="hidden"
       className={
         type == "home"
           ? styles.home
@@ -11,22 +41,43 @@ export default function Newsletter({ type = "default" }) {
           ? styles.about
           : styles.footer
       }
+      id={type == "home" ? "homeNewsletter" : null}
     >
       {type == "about" ? (
-        <div className={styles.emblem}>
-          <h3>First drop</h3>
-          <p>Spring 2022</p>
-        </div>
+        <>
+          <LineDivider className={styles.divTop} />
+          <motion.div
+            variants={emblemVariants}
+            transition={transition}
+            className={styles.emblem}
+          >
+            <h3>First drop</h3>
+            <p>Spring 2022</p>
+          </motion.div>
+          <LineDivider className={styles.divBot} />
+        </>
       ) : null}
-      <h2>
+
+      <motion.h2 variants={titleVariants} transition={transition}>
         {type == "default"
           ? `Subscribe to our newsletter to receive the latest updates`
           : `Subscribe to our newsletter for the latest updates`}
-      </h2>
+      </motion.h2>
       <form className={styles.form}>
-        <input type="email" placeholder="Enter your email"></input>
-        <button>Subscribe</button>
+        <motion.input
+          type="email"
+          placeholder="Enter your email"
+          variants={titleVariants}
+          transition={transition}
+        ></motion.input>
+        <motion.button
+          title="Subscribe"
+          variants={titleVariants}
+          transition={transition}
+        >
+          <span>Subscribe</span>
+        </motion.button>
       </form>
-    </section>
+    </motion.section>
   );
 }

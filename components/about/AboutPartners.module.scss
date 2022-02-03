@@ -54,6 +54,8 @@
     font-size: 1.625rem;
     font-weight: 300;
     margin-bottom: 0.2rem;
+    overflow: hidden;
+    display: block;
 
     @media (min-width: 992px) {
       font-size: 2.5rem;

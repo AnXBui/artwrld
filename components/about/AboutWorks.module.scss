@@ -10,6 +10,11 @@
     margin-bottom: 6.25rem;
     padding-left: 4%;
   }
+
+  h1 {
+    overflow: hidden;
+    display: block;
+  }
 }
 
 .heading {
@@ -46,21 +51,62 @@
 }
 
 .link {
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  padding: 2.625rem 2.75rem;
-  display: block;
-  border: 1px solid black;
-  border-radius: 100%;
   width: fit-content;
   margin: 3.375rem auto;
+  position: relative;
 
   @media (min-width: 992px) {
     margin: 0;
     height: fit-content;
     align-self: flex-end;
     justify-self: flex-end;
-    font-size: 1.0625rem;
+  }
+  a {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 2.625rem 2.75rem;
+    display: block;
+    border-radius: 100%;
+    width: fit-content;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.35s 0.05s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    @media (min-width: 992px) {
+      font-size: 1.0625rem;
+    }
+
+    span {
+      display: block;
+      position: relative;
+      transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        color 0.35s 0.05s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      &::after {
+        content: attr(title);
+        position: absolute;
+        bottom: -4rem;
+        left: 0;
+      }
+    }
+
+    &:hover,
+    &:active {
+      background: black;
+      span {
+        transform: translateY(-4rem);
+        color: white;
+      }
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    stroke: black;
+    pointer-events: none;
   }
 }

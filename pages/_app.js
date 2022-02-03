@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps, router }) {
       <AnimatePresence
         exitBeforeEnter
         onExitComplete={() => {
-          window.scrollTo(0, 0);
+          window.scrollTo({ top: 0, left: 0, behavior: "auto" });
           console.log("scrolled");
         }}
         initial={false}
