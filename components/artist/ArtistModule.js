@@ -4,6 +4,7 @@ import Image from "next/image";
 import ArrowH from "../../assets/svg/ArrowH";
 import Close from "../../assets/svg/Close";
 import { motion, AnimatePresence } from "framer-motion";
+import Fadein from "../text/Fadein";
 
 const ArtistModule = ({ data, initialIndex, exitFunction }) => {
   const [currentArtist, setCurrentArtist] = useState(initialIndex);
@@ -31,9 +32,78 @@ const ArtistModule = ({ data, initialIndex, exitFunction }) => {
   };
 
   const photoVariants = {
-    hidden: { opacity: 0, x: -400, y: -400, rotate: -30, scale: 0.8 },
-    visible: { opacity: 1, x: 0, y: 0, rotate: 0, scale: 1 },
-    exit: { opacity: 0, x: 400, y: 400, rotate: 30, scale: 0.8 },
+    hidden: {
+      opacity: 0,
+      x: -400,
+      y: -400,
+      rotate: -60,
+      scale: 0.3,
+      originX: "0%",
+      originY: "0%",
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      rotate: 0,
+      scale: 1,
+      originX: "50%",
+      originY: "50",
+    },
+    exit: {
+      opacity: 0,
+      x: 400,
+      y: 400,
+      rotate: 60,
+      scale: 0.5,
+      originX: "50%",
+      originY: "50%",
+    },
+  };
+
+  const photoInnerVariants = {
+    hidden: {
+      scale: 1.5,
+      x: "60%",
+      y: "60%",
+      rotate: 20,
+      originX: "0%",
+      originY: "0%",
+    },
+    visible: {
+      scale: 1,
+      x: "0%",
+      y: "0%",
+      rotate: 0,
+      originX: "50%",
+      originY: "50",
+    },
+    exit: {
+      scale: 1,
+      x: "0%",
+      y: "0%",
+      rotate: -20,
+      originX: "50%",
+      originY: "50%",
+    },
+  };
+
+  const captionVariations = {
+    hidden: { opacity: 0, transition: { delay: 0, ...transition } },
+    visible: { opacity: 1, transition: { delay: 0.55, ...transition } },
+    exit: { opacity: 0, transition: { delay: 0, ...transition } },
+  };
+
+  const indexVariants = {
+    hidden: { y: "100%" },
+    visible: { y: "0" },
+    exit: { y: "-100%" },
+  };
+
+  const indexButtonVariants = {
+    hidden: { opacity: 1, pointerEvents: "none" },
+    visible: { opacity: 1, pointerEvents: "all" },
+    exit: { opacity: 1, pointerEvents: "none" },
   };
 
   const transition = {
@@ -44,11 +114,20 @@ const ArtistModule = ({ data, initialIndex, exitFunction }) => {
     mass: 0.3,
   };
 
+  const transitionSection = {
+    type: "spring",
+    clamp: true,
+    tension: 0.001,
+    friction: 100,
+    mass: 0.1,
+    staggerChildren: 0.25,
+  };
+
   const transitionPhoto = {
     type: "spring",
     clamp: true,
-    friction: 600,
-    tension: 1,
+    friction: 20,
+    tension: 0.8,
     mass: 0.75,
   };
 
@@ -58,86 +137,142 @@ const ArtistModule = ({ data, initialIndex, exitFunction }) => {
       initial="hidden"
       animate="visible"
       exit="exit"
-      transition={transition}
+      transition={transitionSection}
       className={styles.section}
     >
       <div>
-        <motion.div className={styles.main}>
-          <motion.h1 className={styles.mobileName}>{name}</motion.h1>
-          <div className={styles.photo}>
-            <AnimatePresence>
+        <div>
+          <motion.div className={styles.main}>
+            <motion.h1 className={styles.mobileName}>{name}</motion.h1>
+
+            <motion.div className={styles.photo}>
+              <AnimatePresence>
+                <motion.div
+                  variants={photoVariants}
+                  transition={transitionPhoto}
+                  key={currentArtist}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                >
+                  <motion.div
+                    variants={photoInnerVariants}
+                    transition={transitionPhoto}
+                  >
+                    <Image layout="fill" src={photo.url} alt={photo.alt} />
+                  </motion.div>
+                </motion.div>
+              </AnimatePresence>
+              <AnimatePresence>
+                <motion.p
+                  variants={captionVariations}
+                  key={currentArtist}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                >
+                  {photo.caption}
+                </motion.p>
+              </AnimatePresence>
+            </motion.div>
+
+            <AnimatePresence exitBeforeEnter>
               <motion.div
-                key={currentArtist}
-                variants={photoVariants}
-                transition={transitionPhoto}
                 initial="hidden"
                 animate="visible"
                 exit="exit"
+                key={currentArtist}
+                className={styles.info}
+                transition={{ staggerChildren: 0.07 }}
               >
-                <Image layout="fill" src={photo.url} alt={photo.alt} />
+                <motion.h1 variants={nameVariants} transition={transition}>
+                  <span>{name}</span>
+                </motion.h1>
+                <motion.p variants={textVariants} transition={transition}>
+                  {bio}
+                </motion.p>
               </motion.div>
-              <p>{photo.caption}</p>
+            </AnimatePresence>
+          </motion.div>
+
+          <div className={styles.controls}>
+            <AnimatePresence exitBeforeEnter>
+              <motion.button
+                key={currentArtist}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                variants={indexButtonVariants}
+                transition={transition}
+                onClick={() => setCurrentArtist(prevArtistIndex)}
+              >
+                <div className={styles.arrow}>
+                  <ArrowH direction="left" />
+                </div>
+                <div className={styles.uiText}>
+                  <p>Previous Artist</p>
+
+                  <motion.h3>
+                    <Fadein>{data[prevArtistIndex].name}</Fadein>
+                  </motion.h3>
+                </div>
+              </motion.button>
+            </AnimatePresence>
+
+            <div className={styles.index}>
+              <p>
+                <motion.div key={currentArtist}>
+                  <AnimatePresence>
+                    {("0" + (currentArtist + 1))
+                      .slice(-2)
+                      .split("")
+                      .map((char, index) => (
+                        <motion.span
+                          initial="hidden"
+                          animate="visible"
+                          exit="exit"
+                          key={`${index}_${char}`}
+                          variants={indexVariants}
+                          transition={transition}
+                        >
+                          {char}
+                        </motion.span>
+                      ))}
+                  </AnimatePresence>
+                </motion.div>
+                <div>/</div>
+                <div>{("0" + data.length).slice(-2)}</div>
+              </p>
+            </div>
+            <AnimatePresence exitBeforeEnter>
+              <motion.button
+                key={currentArtist}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                variants={indexButtonVariants}
+                transition={transition}
+                onClick={() => setCurrentArtist(nextArtistIndex)}
+              >
+                <div className={styles.uiText}>
+                  <p>Next Artist</p>
+
+                  <motion.h3>
+                    <Fadein>{data[nextArtistIndex].name}</Fadein>
+                  </motion.h3>
+                </div>
+
+                <div className={styles.arrow}>
+                  <ArrowH />
+                </div>
+              </motion.button>
             </AnimatePresence>
           </div>
-          <AnimatePresence exitBeforeEnter>
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              key={currentArtist}
-              className={styles.info}
-            >
-              <motion.h1 variants={nameVariants} transition={transition}>
-                <span>{name}</span>
-              </motion.h1>
-              <motion.p variants={textVariants} transition={transition}>
-                {bio}
-              </motion.p>
-            </motion.div>
-          </AnimatePresence>
-        </motion.div>
 
-        <div className={styles.controls}>
-          <button onClick={() => setCurrentArtist(prevArtistIndex)}>
-            <div className={styles.arrow}>
-              <ArrowH direction="left" />
-            </div>
-            <div className={styles.uiText}>
-              <p>Previous Artist</p>
-              <h3>{data[prevArtistIndex].name}</h3>
-            </div>
-          </button>
-
-          <div className={styles.index}>
-            <p>
-              <div>
-                {("0" + (currentArtist + 1))
-                  .slice(-2)
-                  .split()
-                  .map((char, index) => (
-                    <span key={index}>{char}</span>
-                  ))}
-              </div>
-              <div>/</div>
-              <div>{("0" + data.length).slice(-2)}</div>
-            </p>
-          </div>
-
-          <button onClick={() => setCurrentArtist(nextArtistIndex)}>
-            <div className={styles.uiText}>
-              <p>Next Artist</p>
-              <h3>{data[nextArtistIndex].name}</h3>
-            </div>
-
-            <div className={styles.arrow}>
-              <ArrowH />
-            </div>
+          <button className={styles.exit} onClick={() => exitFunction()}>
+            <Close />
           </button>
         </div>
-
-        <button className={styles.exit} onClick={() => exitFunction()}>
-          <Close />
-        </button>
       </div>
     </motion.section>
   );

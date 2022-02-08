@@ -5,11 +5,14 @@ const Fadein = ({ children, ...props }) => {
     hidden: {
       y: 60,
       opacity: 0,
-      originX: 0,
-      originY: 0,
       pointerEvents: "none",
     },
     visible: { y: 0, opacity: 1, originX: 0, originY: 0, pointerEvents: "all" },
+    exit: {
+      y: 60,
+      opacity: 0,
+      pointerEvents: "none",
+    },
   };
   const transition = {
     type: "spring",
