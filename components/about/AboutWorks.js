@@ -6,10 +6,11 @@ import Fadein from "../text/Fadein";
 import Section from "../Section";
 import Circle from "../../assets/svg/Circle";
 import styles from "./AboutWorks.module.scss";
+import { motion } from "framer-motion";
 
 export default function AboutWorks() {
   return (
-    <Section className={styles.section}>
+    <Section viewAmount={0.3} className={styles.section}>
       <h1 className={`h1`}>
         <Word>How</Word> <Word>it</Word>{" "}
         <Word>
@@ -37,14 +38,14 @@ export default function AboutWorks() {
           </Fadein>
         </p>
 
-        <div className={styles.link}>
+        <motion.aside className={styles.link}>
           <LinkTo href="/artists">
             <Fadein>
               <span title="Meet the Artists">Meet the Artists</span>
             </Fadein>
           </LinkTo>
           <Circle />
-        </div>
+        </motion.aside>
       </div>
     </Section>
   );

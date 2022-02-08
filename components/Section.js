@@ -5,9 +5,10 @@ const Section = ({
   delay = 0,
   first = false,
   viewAmount = 0.8,
+  variants,
   ...props
 }) => {
-  const containerVariants = {
+  const containerVariants = variants || {
     hidden: { transition: { delayChildren: 0, staggerChildren: 0 } },
     visible: {
       transition: { delay: first ? 3 : delay, staggerChildren: 0.15 },
