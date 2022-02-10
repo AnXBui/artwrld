@@ -7,12 +7,15 @@
   top: 0;
   left: 0;
   z-index: 25;
-  overflow-y: auto;
+  overflow: hidden;
+
+  // overflow-y: hidden;
 
   > div {
     width: 100vw;
     height: 100vh;
-
+    scroll-behavior: smooth;
+    overflow-y: auto;
     overflow-x: hidden;
     position: absolute;
     top: 0;
@@ -20,10 +23,14 @@
 
     > div {
       width: 100vw;
-      height: 100vh;
+      // height: 100vh;
       position: absolute;
       top: 0;
       left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
 
       @media (min-width: 992px) {
         display: flex;
@@ -39,17 +46,35 @@
   position: relative;
   margin: 4rem 1.5rem;
 
+  @media (min-width: 600px) {
+    max-width: 500px;
+    margin: 4rem auto 1rem;
+    height: fit-content;
+  }
+
   @media (min-width: 992px) {
+    display: grid;
+    margin: 0 10%;
+    top: -5%;
+    max-width: 900px;
+    grid-template-columns: 11fr 8fr;
+  }
+
+  @media (min-width: 1440px) {
     display: grid;
     margin: 0 12%;
     top: -5%;
+    max-width: 1200px;
     grid-template-columns: 11fr 8fr;
   }
 
   .info {
     align-self: center;
     position: relative;
-    margin-bottom: -10vh;
+
+    @media (min-width: 992px) {
+      margin-bottom: -10vh;
+    }
 
     h1 {
       color: white;
@@ -139,7 +164,7 @@
 
   @media (min-width: 992px) {
     position: absolute;
-    bottom: 4vw;
+    bottom: 0vw;
     left: 4vw;
     right: 4vw;
     margin-bottom: 0;
@@ -149,6 +174,7 @@
     display: flex;
     align-items: flex-end;
     width: 100%;
+    padding: 1.5rem 0 3rem;
 
     @media (min-width: 992px) {
       width: 40%;
@@ -246,7 +272,7 @@
   color: white;
   position: fixed;
   top: 1.5rem;
-  left: calc(100vw - 15px - 4vw);
+  left: calc(100vw - 30px - 1.5rem);
   width: 30px;
   height: 30px;
   padding: 0;

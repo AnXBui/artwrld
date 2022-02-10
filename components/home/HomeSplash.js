@@ -26,12 +26,11 @@ export default function HomeSplash() {
         <p>Spring 2022</p>
         <button
           aria-label="Scroll to Explore"
-          onClick={() =>
-            window.scrollTo({
-              top: window.innerHeight / 2,
-              behavior: "smooth",
-            })
-          }
+          onClick={() => {
+            document
+              .getElementById("homeNewsletter")
+              .scrollIntoView({ behavior: "smooth", block: "center" });
+          }}
         >
           <Arrow />
           <Arrow />

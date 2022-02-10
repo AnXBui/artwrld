@@ -41,7 +41,9 @@ export default function Newsletter({ type = "default" }) {
           ? styles.about
           : styles.footer
       }
-      id={type == "home" ? "homeNewsletter" : null}
+      id={
+        type == "home" ? "homeNewsletter" : type == "about" ? "homeAbout" : null
+      }
     >
       {type == "about" ? (
         <>

@@ -15,7 +15,11 @@ const Header = ({ location }) => {
     mass: 0.25,
   };
   const mobile = useMediaQuery({
-    query: "(max-width: 500px)",
+    query: "(max-width: 501px)",
+  });
+
+  const tablet = useMediaQuery({
+    query: "(min-width: 501px) and (max-width: 991px)",
   });
 
   const buttonVariants = {
@@ -90,7 +94,7 @@ const Header = ({ location }) => {
             className={styles.nav}
           >
             <motion.div className={styles.mobileBackground}>
-              <motion.div className={styles.navLinks}>
+              <motion.div layout={!mobile} className={styles.navLinks}>
                 <LinkTo onClick={() => setOpenMenu(false)} href="/about">
                   <motion.span
                     transition={transition}
@@ -99,6 +103,9 @@ const Header = ({ location }) => {
                   >
                     About
                   </motion.span>
+                  {location == "/about" ? (
+                    <motion.div layoutId="bar" className={styles.rule} />
+                  ) : null}
                 </LinkTo>
                 <LinkTo onClick={() => setOpenMenu(false)} href="/artists">
                   <motion.span
@@ -108,6 +115,9 @@ const Header = ({ location }) => {
                   >
                     Artists
                   </motion.span>
+                  {location == "/artists" ? (
+                    <motion.div layoutId="bar" className={styles.rule} />
+                  ) : null}
                 </LinkTo>
               </motion.div>
               {mobile ? (

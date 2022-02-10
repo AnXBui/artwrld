@@ -1,6 +1,10 @@
 .section {
   padding: 0 1.5rem;
 
+  @media (min-width: 501px) {
+    padding: 0 2.5rem;
+  }
+
   @media (min-width: 992px) {
     padding: 0 4%;
   }
@@ -32,6 +36,15 @@
 
 .list {
   margin-bottom: 6.25rem;
+
+  @media (min-width: 501px) {
+    display: grid;
+    margin-left: 0;
+    margin-right: 2.5rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    height: fit-content;
+  }
 
   @media (min-width: 992px) {
     display: grid;

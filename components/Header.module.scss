@@ -9,12 +9,14 @@
 
 .navLinks {
   margin: 7.25rem 1.5rem 0;
-  @media (min-width: 500px) {
+  position: fixed;
+
+  @media (min-width: 501px) {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    position: fixed;
     margin: 0;
+    position: relative;
   }
 
   a {
@@ -25,12 +27,14 @@
     margin-bottom: 3.375rem;
     overflow: hidden;
 
-    @media (min-width: 500px) {
+    @media (min-width: 501px) {
       margin-left: 2.5rem;
       font-weight: 800;
       font-size: 1rem;
       color: black;
       margin-bottom: 0;
+      overflow: visible;
+      position: relative;
     }
 
     span {
@@ -50,7 +54,7 @@
   z-index: 35;
   overflow: hidden;
 
-  @media (min-width: 500px) {
+  @media (min-width: 501px) {
     position: relative;
     z-index: 20;
     height: 100%;
@@ -65,7 +69,7 @@
   width: 100%;
   height: 100vh;
 
-  @media (min-width: 500px) {
+  @media (min-width: 501px) {
     position: relative;
     display: flex;
     justify-content: flex-end;
@@ -92,11 +96,16 @@
   align-items: center;
   height: 5.25rem;
   padding: 1.75rem 1.5rem;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 20;
+
+  @media (min-width: 500px) {
+    padding: 2.5rem 2.5rem;
+    height: 7rem;
+  }
 
   @media (min-width: 992px) {
     padding: 2.5rem 4.15vw;
@@ -112,13 +121,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
   z-index: 40;
   --svgColor: white;
   transition: background 0.25s;
 
   svg {
-    width: 60%;
+    width: 50%;
+    height: 50%;
+    min-width: 1.25rem;
+    min-height: 1.25rem;
     fill: var(--svgColor);
     transition: fill 0.25s;
   }
@@ -126,4 +140,18 @@
 
 .mobileBackground {
   position: absolute;
+}
+
+.rule {
+  position: absolute;
+  bottom: -0.3rem;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: black;
+  display: none;
+
+  @media (min-width: 501px) {
+    display: block;
+  }
 }

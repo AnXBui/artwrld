@@ -1,17 +1,22 @@
 import styles from "./ArtistModule.module.scss";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import ArrowH from "../../assets/svg/ArrowH";
 import Close from "../../assets/svg/Close";
 import { motion, AnimatePresence } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 import Fadein from "../text/Fadein";
 
 const ArtistModule = ({ data, initialIndex, exitFunction }) => {
   const [currentArtist, setCurrentArtist] = useState(initialIndex);
+  const containerRef = useRef(null);
   const { name, bio, photo } = data[currentArtist];
   const nextArtistIndex = (currentArtist + 1) % data.length;
   const prevArtistIndex =
     currentArtist == 0 ? data.length - 1 : currentArtist - 1;
+  const mobile = useMediaQuery({
+    query: "(max-width: 501px)",
+  });
 
   const sectionVariants = {
     hidden: { width: "0%", x: -200 },
@@ -48,7 +53,7 @@ const ArtistModule = ({ data, initialIndex, exitFunction }) => {
       rotate: 0,
       scale: 1,
       originX: "50%",
-      originY: "50",
+      originY: "50%",
     },
     exit: {
       opacity: 0,
@@ -76,7 +81,7 @@ const ArtistModule = ({ data, initialIndex, exitFunction }) => {
       y: "0%",
       rotate: 0,
       originX: "50%",
-      originY: "50",
+      originY: "50%",
     },
     exit: {
       scale: 1,
@@ -140,7 +145,7 @@ const ArtistModule = ({ data, initialIndex, exitFunction }) => {
       transition={transitionSection}
       className={styles.section}
     >
-      <div>
+      <div ref={containerRef}>
         <div>
           <motion.div className={styles.main}>
             <motion.h1 className={styles.mobileName}>{name}</motion.h1>
@@ -252,19 +257,24 @@ const ArtistModule = ({ data, initialIndex, exitFunction }) => {
                 exit="exit"
                 variants={indexButtonVariants}
                 transition={transition}
-                onClick={() => setCurrentArtist(nextArtistIndex)}
+                layout
+                onClick={() => {
+                  setCurrentArtist(nextArtistIndex);
+                  containerRef.current.scrollTo(0, 0);
+                  console.log(containerRef.current);
+                }}
               >
-                <div className={styles.uiText}>
+                <motion.div className={styles.uiText}>
                   <p>Next Artist</p>
 
                   <motion.h3>
                     <Fadein>{data[nextArtistIndex].name}</Fadein>
                   </motion.h3>
-                </div>
+                </motion.div>
 
-                <div className={styles.arrow}>
+                <motion.div className={styles.arrow}>
                   <ArrowH />
-                </div>
+                </motion.div>
               </motion.button>
             </AnimatePresence>
           </div>

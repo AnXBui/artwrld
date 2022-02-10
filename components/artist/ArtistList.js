@@ -36,6 +36,15 @@ const artistsList = [
     },
   },
   {
+    name: "Jennifer & Kevin McCoy",
+    bio: "Jennifer and Kevin McCoy are New York-based digital media artists whose works extend from film and video to installation and generative software that uses blockchain technology to create long-term ecosystems for images to live, die, and evolve. The McCoys’ work has been featured in exhibitions at the Pompidou Center, MoMA, the British Film Institute, and the Sundance Film Festival, and is held in the collections of MoMA, the Metropolitan Museum of Art, Whitney Museum, and Museum of Fine Arts in Houston. In 2014, Kevin McCoy minted the world’s first digital art NFT.",
+    photo: {
+      url: artistPhoto,
+      alt: "Shirin Neshat photo by Rodolfo Martinez",
+      caption: "Photo Credit: Rodolfo Martinez",
+    },
+  },
+  {
     name: "Shirin Neshat",
     bio: "Shirin Neshat is an Iranian-born artist and filmmaker based in New York. Her photographs, videos, and films combine poetic, politically charged images with narratives questioning issues of power, religion, race, and gender as seen through the lens of her personal experiences as an Iranian woman living in exile. Neshat's work has been featured in numerous solo exhibitions, including at The Broad, Hirshhorn Museum, Detroit Institute of Arts, Stedelijk Museum, and the Serpentine Gallery. She was awarded the First International Prize at the 48th Venice Biennale and the Silver Lion Award for Best Director at the 66th Venice International Film Festival.",
     photo: {

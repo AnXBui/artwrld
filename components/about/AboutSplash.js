@@ -41,24 +41,23 @@ export default function AboutSplash() {
             projects that are thoughtful, bold, complex, and original.
           </Fadein>
         </p>
-      </div>
 
-      <div className={styles.button}>
-        <Fadein>
-          <button
-            onClick={() =>
-              window.scrollTo({
-                top: (window.innerHeight * 3) / 4,
-                behavior: "smooth",
-              })
-            }
-            aria-label="Learn more"
-          >
-            <Arrow />
-            <Arrow />
-          </button>
-          <Circle />
-        </Fadein>
+        <aside className={styles.button}>
+          <Fadein>
+            <button
+              onClick={() => {
+                document
+                  .getElementById("homeAbout")
+                  .scrollIntoView({ behavior: "smooth", block: "center" });
+              }}
+              aria-label="Learn more"
+            >
+              <Arrow />
+              <Arrow />
+            </button>
+            <Circle />
+          </Fadein>
+        </aside>
       </div>
     </Section>
   );
