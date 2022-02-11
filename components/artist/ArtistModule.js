@@ -164,7 +164,12 @@ const ArtistModule = ({ data, initialIndex, exitFunction }) => {
                     variants={photoInnerVariants}
                     transition={transitionPhoto}
                   >
-                    <Image layout="fill" src={photo.url} alt={photo.alt} />
+                    <Image
+                      layout="fill"
+                      placeholder="blur"
+                      src={photo.url}
+                      alt={photo.alt}
+                    />
                   </motion.div>
                 </motion.div>
               </AnimatePresence>
