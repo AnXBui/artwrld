@@ -94,8 +94,8 @@ const artistsList = [
     bio: "Caledonia Curry, known as Swoon, is a contemporary artist and filmmaker. She was one of the first women to gain international recognition as a street artist who pushed the conceptual limits of the genre. Her portraits, immersive installations, and community-based projects center compassion and explore the transformative power of art. Curry’s work has been featured in solo exhibitions at the Brooklyn Museum, Detroit Institute of Arts, ICA Boston, and New Orleans Museum of Art, and is in the collections of the Tate, MoMA, and MASS MoCA.",
     photo: {
       url: swoon,
-      alt: "Swoon",
-      caption: "Photo courtesy of the artist",
+      alt: "Swoon photo by January Fredricks",
+      caption: "Photo credit: January Fredricks",
     },
   },
   {
