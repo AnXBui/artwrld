@@ -1,0 +1,44 @@
+.section {
+  min-height: 100vh;
+  padding: 9rem 1.5rem 9rem;
+
+  h1 {
+    overflow: hidden;
+  }
+
+  @media (min-width: 501px) {
+    // font-size: 3.625rem;
+    padding: 9rem 4% 9rem;
+  }
+}
+
+.heading {
+  font-family: "UniversalSans";
+  font-size: clamp(1.5rem, 5vw, 3.625rem);
+  font-weight: 300;
+  line-height: 1.15;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+
+  @media (min-width: 501px) {
+    // font-size: 3.625rem;
+    max-width: 25ch;
+  }
+
+  @media (min-width: 992px) {
+    // font-size: 3.625rem;
+    padding-left: 8%;
+    max-width: 29ch;
+    margin-top: 3.375rem;
+  }
+
+  a {
+    font-weight: 600;
+  }
+
+  i {
+    font-family: "Bradford LL";
+    font-weight: 300;
+    font-style: italic;
+  }
+}

@@ -45,14 +45,14 @@
     position: relative;
     transition: color 0.25s cubic-bezier(0.47, 0, 0.745, 0.715);
 
-    &::before {
-      content: attr(title);
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      margin-bottom: -5rem;
-      color: white;
-    }
+    // &::before {
+    //   content: attr(title);
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: 0;
+    //   margin-bottom: -5rem;
+    //   color: white;
+    // }
   }
 
   b {
@@ -62,21 +62,22 @@
 
   &:hover,
   &:active {
-    b {
-      transform: translateX(2rem) translateY(-5rem) !important;
-    }
+    // b {
+    //   transform: translateX(2rem) translateY(-5rem) !important;
+    // }
 
-    &::after {
-      transform: scaleY(1);
-    }
+    // &::after {
+    //   transform: scaleY(1);
+    // }
 
-    span {
-      color: white;
-    }
+    // span {
+    //   color: white;
+    // }
 
     svg {
       // transform: translateX(0);
       opacity: 1;
+      fill: black;
     }
   }
 

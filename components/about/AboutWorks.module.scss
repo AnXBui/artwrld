@@ -24,8 +24,15 @@
   }
 
   p {
+    margin-bottom: 2rem;
+    line-height: 1.5;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
     @media (min-width: 501px) {
       max-width: 57ch;
+      grid-column: 1 / 2;
     }
   }
 }

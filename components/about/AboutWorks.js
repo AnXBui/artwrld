@@ -25,16 +25,29 @@ export default function AboutWorks() {
           contribute to a more intentional art economy.
         </Fadein>
       </h2>
-      <div className={styles.info}>
-        <p className={`largeParagraph`}>
+      <article className={`${styles.info} largeParagraph`}>
+        <p>
           <Fadein>
             Every artwork presented by Artwrld is backed by an NFT (non-fungible
             token), a piece of code that establishes the work as a unique object
             created and owned by certain individuals, like a certificate of
             authenticity for digital art. This code is written permanently and
             securely into a global record of digital transactions known as a
-            blockchain (Artwrld uses the Ethereum blockchain for most of our
-            projects).
+            blockchain.
+          </Fadein>
+        </p>
+        <p>
+          <Fadein>
+            Artwrld is acutely aware of the many valid ecological concerns
+            surrounding NFTs and blockchain technologies, in particular the
+            Ethereum blockchain on which many NFT projects are based. Some
+            Artwrld projects may launch on Ethereum while others may not. We
+            will be transparent as we make these determinations. We are also
+            committed to finding ways to reduce our carbon footprint and do
+            right by our artists and the planet. This will include carbon
+            offsets for any projects we launch on Ethereum, as well as deploying
+            projects on alternate blockchains that use a proof-of-stake system
+            to dramatically reduce their energy consumption.
           </Fadein>
         </p>
 
@@ -46,7 +59,7 @@ export default function AboutWorks() {
           </LinkTo>
           <Circle />
         </motion.aside>
-      </div>
+      </article>
     </Section>
   );
 }

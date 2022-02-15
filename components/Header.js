@@ -5,6 +5,8 @@ import { useMediaQuery } from "react-responsive";
 import { useState } from "react";
 import styles from "./Header.module.scss";
 import { AnimatePresence, motion } from "framer-motion";
+import socialList from "../components/footer/socialList";
+import Image from "next/image";
 
 const Header = ({ location }) => {
   const transition = {
@@ -119,11 +121,34 @@ const Header = ({ location }) => {
                     <motion.div layoutId="bar" className={styles.rule} />
                   ) : null}
                 </LinkTo>
+                <LinkTo onClick={() => setOpenMenu(false)} href="/contact">
+                  <motion.span
+                    transition={transition}
+                    custom={1}
+                    variants={navMobileLinkVariants}
+                  >
+                    Contact
+                  </motion.span>
+                  {location == "/contact" ? (
+                    <motion.div layoutId="bar" className={styles.rule} />
+                  ) : null}
+                </LinkTo>
               </motion.div>
               {mobile ? (
-                <div className={styles.social}>
-                  <p>Social Media List</p>
-                </div>
+                <ul className={styles.social}>
+                  {socialList.map((item, index) => (
+                    <li key={index}>
+                      <a
+                        href={item.link}
+                        rel="noreferrer"
+                        target="_blank"
+                        aria-label={item.text}
+                      >
+                        <Image layout="fill" src={item.icon} alt="" />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               ) : null}
             </motion.div>
           </motion.nav>

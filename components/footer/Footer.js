@@ -1,6 +1,8 @@
 import Logo from "../../assets/svg/Logo";
 import LinkTo from "../LinkTo";
 import styles from "./Footer.module.scss";
+import socialList from "./socialList";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -9,9 +11,20 @@ export default function Footer() {
         <Logo />
       </LinkTo>
 
-      <div className={styles.socialList}>
-        <p>Social Media Links</p>
-      </div>
+      <ul className={styles.socialList}>
+        {socialList.map((item, index) => (
+          <li key={index}>
+            <a
+              href={item.link}
+              rel="noreferrer"
+              target="_blank"
+              aria-label={item.text}
+            >
+              <Image layout="fill" src={item.icon} alt="" />
+            </a>
+          </li>
+        ))}
+      </ul>
     </footer>
   );
 }

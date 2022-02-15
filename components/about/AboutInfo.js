@@ -11,7 +11,7 @@ export default function AboutInfo() {
       </h3>
       <p className={`largeParagraph`}>
         <Fadein>
-          Each project also benefits one or more nonprofit organizations,
+          Each project we present benefits one or more nonprofit organizations,
           selected by the artist to receive a portion of every sale. Because
           NFTs have the potential to distribute funds automatically and in
           perpetuity whenever the art changes hands, artists can use their work

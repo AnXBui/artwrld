@@ -7,21 +7,21 @@
 
   &:hover,
   &.itemActive {
-    .itemPhoto {
-      opacity: 1;
-    }
+    // .itemPhoto {
+    //   opacity: 1;
+    // }
 
-    h2 {
-      // font-family: "UniversalSans";
-      // font-weight: 600;
-      b {
-        transform: translateY(-2em);
+    // h2 {
+    //   // font-family: "UniversalSans";
+    //   // font-weight: 600;
+    //   b {
+    //     transform: translateY(-2em);
 
-        &::after {
-        }
-        // transition-delay: 0s;
-      }
-    }
+    //     &::after {
+    //     }
+    //     // transition-delay: 0s;
+    //   }
+    // }
   }
 
   h3 {
@@ -66,20 +66,20 @@
         letter-spacing: 1px;
         // transition-delay: 0.15s;
 
-        &::after {
-          content: attr(title);
-          font-size: 1em;
-          position: absolute;
-          font-family: "UniversalSans";
-          font-weight: 600;
-          bottom: 0.15em;
-          margin-bottom: -0.15em;
-          text-align: center;
-          width: 100%;
-          transform: translateY(2em);
-          transform-origin: left bottom;
-          letter-spacing: -1px;
-        }
+        // &::after {
+        //   content: attr(title);
+        //   font-size: 1em;
+        //   position: absolute;
+        //   font-family: "UniversalSans";
+        //   font-weight: 600;
+        //   bottom: 0.15em;
+        //   margin-bottom: -0.15em;
+        //   text-align: center;
+        //   width: 100%;
+        //   transform: translateY(2em);
+        //   transform-origin: left bottom;
+        //   letter-spacing: -1px;
+        // }
       }
     }
   }

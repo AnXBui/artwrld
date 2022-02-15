@@ -50,30 +50,30 @@
       mix-blend-mode: difference;
     }
 
-    &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin-left: -1.5em;
-      margin-top: -1.25em;
-      width: 3em;
-      height: 3em;
-      background: url("/img/shirin_neshat.png");
-      background-size: cover;
-      background-position: center;
-      z-index: -1;
-      // clip-path: inset(100% 0 0 0);
-      opacity: 0;
-      transition: clip-path 0.35s cubic-bezier(0.075, 0.82, 0.165, 1),
-        transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1),
-        opacity 0.25s ease-in-out;
-      transform: translateY(50px) rotate(10deg);
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 50%;
+    //   margin-left: -1.5em;
+    //   margin-top: -1.25em;
+    //   width: 3em;
+    //   height: 3em;
+    //   background: url("/img/shirin_neshat.png");
+    //   background-size: cover;
+    //   background-position: center;
+    //   z-index: -1;
+    //   // clip-path: inset(100% 0 0 0);
+    //   opacity: 0;
+    //   transition: clip-path 0.35s cubic-bezier(0.075, 0.82, 0.165, 1),
+    //     transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1),
+    //     opacity 0.25s ease-in-out;
+    //   transform: translateY(50px) rotate(10deg);
 
-      @media (prefers-reduced-motion) {
-        display: none;
-      }
-    }
+    //   @media (prefers-reduced-motion) {
+    //     display: none;
+    //   }
+    // }
 
     span {
       color: white;
@@ -81,11 +81,11 @@
     }
 
     &:hover {
-      &:after {
-        // clip-path: inset(0 0 0 0);
-        transform: translate(0) rotate(0deg);
-        opacity: 1;
-      }
+      // &:after {
+      //   // clip-path: inset(0 0 0 0);
+      //   transform: translate(0) rotate(0deg);
+      //   opacity: 1;
+      // }
     }
   }
 }

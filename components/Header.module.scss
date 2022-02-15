@@ -81,12 +81,18 @@
 
 .social {
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 2.5rem;
   left: 1.5rem;
   right: 1.5rem;
+  display: flex;
 
-  p {
+  a {
     color: white;
+    width: 2.25rem;
+    height: 2.25rem;
+    display: block;
+    position: relative;
+    margin-right: 1rem;
   }
 }
 
