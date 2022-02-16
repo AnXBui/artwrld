@@ -7,7 +7,7 @@ const Artists = () => {
   return (
     <Layout>
       <ArtistList />
-      <Newsletter />
+      {/* <Newsletter /> */}
       <Footer />
     </Layout>
   );

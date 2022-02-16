@@ -1,8 +1,9 @@
 .item {
   position: relative;
-  // width: fit-content;
+  width: fit-content;
   margin-bottom: clamp(1.5rem, 5vw, 3rem);
-  overflow: hidden;
+  cursor: pointer;
+  // overflow: hidden;
   // background: white;
 
   &:hover,
@@ -26,7 +27,7 @@
 
   h3 {
     margin-right: 1.5rem;
-    color: white;
+    color: black;
     @media (min-width: 992px) {
       font-size: 1.25rem;
       font-weight: 300;
@@ -40,7 +41,7 @@
     max-width: 15ch;
     text-align: left;
     line-height: 1.05;
-    color: white;
+    color: black;
     // display: flex;
     // flex-wrap: wrap;
 
@@ -90,7 +91,8 @@
     justify-content: flex-start;
     position: relative;
     z-index: 2;
-    mix-blend-mode: difference;
+    // mix-blend-mode: difference;
+    transition: opacity 0.2s ease-out, filter 0.2s ease-out;
   }
 
   @media (min-width: 992px) {
@@ -123,6 +125,24 @@
   @media (min-width: 992px) {
     padding-top: 12.5rem;
     padding-bottom: 10.0625rem;
+  }
+}
+
+.listHover {
+  @media (min-width: 992px) {
+    .item {
+      button {
+        opacity: 0.5;
+        filter: blur(3px);
+      }
+    }
+
+    .activeItem {
+      button {
+        opacity: 1 !important;
+        filter: blur(0px);
+      }
+    }
   }
 }
 

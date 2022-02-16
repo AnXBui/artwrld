@@ -5,7 +5,7 @@ import Section from "../Section";
 
 export default function ContactSplash() {
   return (
-    <Section viewAmount={0.9} delay={1} className={styles.section}>
+    <Section first={true} className={styles.section}>
       <h1 className={`h1`}>
         <Word>Contact</Word>
       </h1>

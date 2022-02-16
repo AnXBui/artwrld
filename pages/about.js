@@ -10,11 +10,11 @@ export default function About() {
   return (
     <Layout>
       <AboutSplash />
-      <Newsletter type="about" />
+      <Newsletter type="about" form={false} />
       <AboutInfo />
       <AboutWorks />
       <AboutPartners />
-      <Newsletter />
+      {/* <Newsletter /> */}
       <Footer />
     </Layout>
   );

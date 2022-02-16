@@ -1,58 +1,58 @@
 /* Adding typefaces */
 
+@font-face {
+  font-family: "UniversalSans";
+  src: url("/fonts/Lato-LightItalic.woff2") format("woff2"),
+    url("/fonts/Lato-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "UniversalSans";
+  src: url("/fonts/Lato-Light.woff2") format("woff2"),
+    url("/fonts/Lato-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 // @font-face {
 //   font-family: "UniversalSans";
-//   src: url("/fonts/UniversalSans-300Italic.woff2") format("woff2"),
-//     url("/fonts/UniversalSans-300Italic.woff") format("woff");
-//   font-weight: 300;
+//   src: url("/fonts/UniversalSans-400Italic.woff2") format("woff2"),
+//     url("/fonts/UniversalSans-400Italic.woff") format("woff");
+//   font-weight: 400;
 //   font-style: italic;
 //   font-display: swap;
 // }
 
 // @font-face {
 //   font-family: "UniversalSans";
-//   src: url("/fonts/UniversalSans-300.woff2") format("woff2"),
-//     url("/fonts/UniversalSans-300.woff") format("woff");
-//   font-weight: 300;
+//   src: url("/fonts/UniversalSans-400.woff2") format("woff2"),
+//     url("/fonts/UniversalSans-400.woff") format("woff");
+//   font-weight: 400;
 //   font-style: normal;
 //   font-display: swap;
 // }
 
-@font-face {
-  font-family: "UniversalSans";
-  src: url("/fonts/UniversalSans-400Italic.woff2") format("woff2"),
-    url("/fonts/UniversalSans-400Italic.woff") format("woff");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
+// @font-face {
+//   font-family: "UniversalSans";
+//   src: url("/fonts/UniversalSans-500.woff2") format("woff2"),
+//     url("/fonts/UniversalSans-500.woff") format("woff");
+//   font-weight: 500;
+//   font-style: normal;
+//   font-display: swap;
+// }
 
-@font-face {
-  font-family: "UniversalSans";
-  src: url("/fonts/UniversalSans-400.woff2") format("woff2"),
-    url("/fonts/UniversalSans-400.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "UniversalSans";
-  src: url("/fonts/UniversalSans-500.woff2") format("woff2"),
-    url("/fonts/UniversalSans-500.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "UniversalSans";
-  src: url("/fonts/UniversalSans-500Italic.woff2") format("woff2"),
-    url("/fonts/UniversalSans-500Italic.woff") format("woff");
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
+// @font-face {
+//   font-family: "UniversalSans";
+//   src: url("/fonts/UniversalSans-500Italic.woff2") format("woff2"),
+//     url("/fonts/UniversalSans-500Italic.woff") format("woff");
+//   font-weight: 500;
+//   font-style: italic;
+//   font-display: swap;
+// }
 
 @font-face {
   font-family: "UniversalSans";
@@ -72,59 +72,59 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: "UniversalSans-900";
-  src: url("/fonts/UniversalSans-900.woff2") format("woff2"),
-    url("/fonts/UniversalSans-900.woff") format("woff");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
+// @font-face {
+//   font-family: "UniversalSans-900";
+//   src: url("/fonts/UniversalSans-900.woff2") format("woff2"),
+//     url("/fonts/UniversalSans-900.woff") format("woff");
+//   font-weight: 900;
+//   font-style: normal;
+//   font-display: swap;
+// }
 
-@font-face {
-  font-family: "UniversalSans";
-  src: url("/fonts/UniversalSans-900Italic.woff2") format("woff2"),
-    url("/fonts/UniversalSans-900Italic.woff") format("woff");
-  font-weight: 900;
-  font-style: italic;
-  font-display: swap;
-}
+// @font-face {
+//   font-family: "UniversalSans";
+//   src: url("/fonts/UniversalSans-900Italic.woff2") format("woff2"),
+//     url("/fonts/UniversalSans-900Italic.woff") format("woff");
+//   font-weight: 900;
+//   font-style: italic;
+//   font-display: swap;
+// }
 
-@font-face {
-  font-family: "Office Code Pro";
-  src: url("/fonts/OfficeCodePro-LightItalic.woff2") format("woff2"),
-    url("/fonts/OfficeCodePro-LightItalic.woff") format("woff");
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
+// @font-face {
+//   font-family: "Office Code Pro";
+//   src: url("/fonts/OfficeCodePro-LightItalic.woff2") format("woff2"),
+//     url("/fonts/OfficeCodePro-LightItalic.woff") format("woff");
+//   font-weight: 300;
+//   font-style: italic;
+//   font-display: swap;
+// }
 
-@font-face {
-  font-family: "Office Code Pro";
-  src: url("/fonts/OfficeCodePro-Light.woff2") format("woff2"),
-    url("/fonts/OfficeCodePro-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
+// @font-face {
+//   font-family: "Office Code Pro";
+//   src: url("/fonts/OfficeCodePro-Light.woff2") format("woff2"),
+//     url("/fonts/OfficeCodePro-Light.woff") format("woff");
+//   font-weight: 300;
+//   font-style: normal;
+//   font-display: swap;
+// }
 
-@font-face {
-  font-family: "Office Code Pro";
-  src: url("/fonts/OfficeCodePro-BoldItalic.woff2") format("woff2"),
-    url("/fonts/OfficeCodePro-BoldItalic.woff") format("woff");
-  font-weight: bold;
-  font-style: italic;
-  font-display: swap;
-}
+// @font-face {
+//   font-family: "Office Code Pro";
+//   src: url("/fonts/OfficeCodePro-BoldItalic.woff2") format("woff2"),
+//     url("/fonts/OfficeCodePro-BoldItalic.woff") format("woff");
+//   font-weight: bold;
+//   font-style: italic;
+//   font-display: swap;
+// }
 
-@font-face {
-  font-family: "Office Code Pro";
-  src: url("/fonts/OfficeCodePro-Bold.woff2") format("woff2"),
-    url("/fonts/OfficeCodePro-Bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
+// @font-face {
+//   font-family: "Office Code Pro";
+//   src: url("/fonts/OfficeCodePro-Bold.woff2") format("woff2"),
+//     url("/fonts/OfficeCodePro-Bold.woff") format("woff");
+//   font-weight: bold;
+//   font-style: normal;
+//   font-display: swap;
+// }
 
 @font-face {
   font-family: "Bradford LL";

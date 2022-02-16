@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <Layout>
       <HomeSplash />
-      <Newsletter type="home" />
+      <Newsletter type="home" form={false} />
       <HomeLink />
       <Footer />
     </Layout>

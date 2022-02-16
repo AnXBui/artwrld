@@ -22,7 +22,7 @@ const partnersData = [
   },
   {
     name: "Scott Brewer",
-    title: "CEO & Artistic Director, Partner",
+    title: "Chief Technology Officer",
     bio: "An experienced technologist, founder, strategist, and product leader, Scott Brewer is the co-founder of the creative technology firm Art Processors and blockchain digital art gallery Bright Moments. He has designed and managed software used and loved by millions for over 15 years.",
   },
   {

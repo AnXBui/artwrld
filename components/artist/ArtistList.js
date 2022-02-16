@@ -4,7 +4,7 @@ import { useState } from "react";
 import ArtistModule from "./ArtistModule";
 import Word from "../text/Word";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue } from "framer-motion";
 import Fadein from "../text/Fadein";
 
 import melChin from "../../public/img/MelChin.png";
@@ -13,19 +13,20 @@ import jeniferKevinMccoy from "../../public/img/Jennifer_KevinMcCoy.png";
 import shirinNeshat from "../../public/img/ShirinNeshat.png";
 import paulPfeiffer from "../../public/img/PaulPfeiffer.png";
 import walidRaad from "../../public/img/WalidRaad.png";
+import dukeRiley from "../../public/img/DukeRiley.png";
 import swoon from "../../public/img/Swoon.jpg";
 import apichatpongWeer from "../../public/img/ApichatpongWeerasethakul.png";
 
 const artistsList = [
-  {
-    name: "Yael Bartana",
-    bio: "Through films, installations, photographs, performances, and public monuments, Yael Bartana investigates the mechanisms of power structures and delves into subjects ranging from national identity and trauma to the collective unconscious. Her work is held in the collections of MoMA, the Tate, and the Centre Pompidou, and has been featured in solo exhibitions at the Tel Aviv Museum of Art, MoMA PS1, Philadelphia Museum of Art, Stedelijk Museum, and Fondazione Modena Arti Visive. She is a recipient of the Artes Mundi Prize.",
-    photo: {
-      url: artistPhoto,
-      alt: "Yael Bartana",
-      caption: "Photo Credit: Rodolfo Martinez",
-    },
-  },
+  // {
+  //   name: "Yael Bartana",
+  //   bio: "Through films, installations, photographs, performances, and public monuments, Yael Bartana investigates the mechanisms of power structures and delves into subjects ranging from national identity and trauma to the collective unconscious. Her work is held in the collections of MoMA, the Tate, and the Centre Pompidou, and has been featured in solo exhibitions at the Tel Aviv Museum of Art, MoMA PS1, Philadelphia Museum of Art, Stedelijk Museum, and Fondazione Modena Arti Visive. She is a recipient of the Artes Mundi Prize.",
+  //   photo: {
+  //     url: artistPhoto,
+  //     alt: "Yael Bartana",
+  //     caption: "Photo Credit: Rodolfo Martinez",
+  //   },
+  // },
   {
     name: "Mel Chin",
     bio: "Mel Chin translates compelling concepts into a diverse array of films, objects, collective actions, and works that require multi-disciplinary collaboration. He pioneered the science of “green remediation,” inserted conceptual art into primetime television, mobilized over half a million participants in the fight to end childhood lead poisoning, and expressed a future shaped by climate change with an AR and sculptural installation in Times Square. Chin’s work has been shown internationally, including a 40-year survey exhibition at the Queens Museum. He is a MacArthur Fellow and a member of the American Academy of Arts and Letters.",
@@ -50,7 +51,7 @@ const artistsList = [
     photo: {
       url: jeniferKevinMccoy,
       alt: "Jennifer & Kevin McCoy",
-      caption: "Photo courtesy of the artist",
+      caption: "Photo courtesy of the artists",
     },
   },
   {
@@ -84,7 +85,7 @@ const artistsList = [
     name: "Duke Riley",
     bio: "Working across drawing, printmaking, mosaic, sculpture, performative interventions, and installations, Duke Riley creates work that weaves together history and contemporary events with elements of fantasy and myth. Often addressing maritime history and environmental issues such as plastic pollution and the destruction of waterfront communities, his work has been exhibited widely, from the Havana Biennial to public commissions by Creative Time and MTA Arts for Transit. He will have a solo show at the Brooklyn Museum in 2022.",
     photo: {
-      url: artistPhoto,
+      url: dukeRiley,
       alt: "Duke Riley",
       caption: "Photo courtesy of the artist",
     },
@@ -112,9 +113,13 @@ const artistsList = [
 const ArtistList = () => {
   const data = artistsList;
   const [currentArtist, setCurrentArtist] = useState(null);
+  const [hoverArtist, setHoverArtist] = useState(-1);
   const itemVariants = {
     hidden: { y: 300, opacity: 0 },
-    visible: { y: 0, opacity: 1 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
   };
 
   const listVariants = {
@@ -146,7 +151,9 @@ const ArtistList = () => {
         animate="visible"
         variants={listVariants}
         transition={{ staggerChildren: 0.15, ...transition }}
-        className={styles.list}
+        className={`${styles.list} ${
+          hoverArtist == -1 ? null : styles.listHover
+        }`}
       >
         {data.map(({ name, photo }, index) => {
           var newIndex = index + 1;
@@ -160,9 +167,20 @@ const ArtistList = () => {
               variants={itemVariants}
               className={`${styles.item} ${
                 currentActive ? styles.itemActive : null
-              }`}
+              } ${hoverArtist == index ? styles.activeItem : null}`}
               // transition={transition}
               key={index}
+              onHoverStart={() => {
+                if (hoverArtist != index || hoverArtist == null) {
+                  setHoverArtist(index);
+                  console.log(hoverArtist);
+                }
+              }}
+              onHoverEnd={() => {
+                if (hoverArtist == index) {
+                  setHoverArtist(-1);
+                }
+              }}
             >
               <motion.button
                 animate="hidden"
